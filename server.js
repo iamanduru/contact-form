@@ -1,24 +1,22 @@
 const express = require('express');
-const app = express();  //Calls the express() function creating app object that represents the server
 const path = require('path');
+const app = express();
 
-//Checks for PORT if there's no port it defaults to 3000
-const PORT = process.env.PORT || 3000;  
+// Middleware to parse form data
+app.use(express.urlencoded({ extended: true }));
 
-/* Middleware - Executed between the request and response phases*/
+//Serve static files HTML, CSS, Images
+app.use(express.static(path.join(__dirname, 'public')));  // Settin up Express and serve static files from the public folder
 
-app.use(express.static('public'));  //Any files in public directory can be accessed
-app.use(express.json()); //Parses incoming requests with JSON payloads and makes the parsed data available in req.body
-
-app.get('/', (req, res) => {  //Callback function req is request contains data bout clients request & res(response) used to send response back
-    res.sendFile(path.join(__dirname, 'public', 'form.html')); //sends the format.html to public directory
+//Route for contact form
+app.post('/contact', (req, res) => {  // route processes form submissions
+    const { name, email, message } = req.body;
+    console.log(`Received message from ${name} (${email}) : ${message}`);
+    res.send('Thank you for your message!');
 });
 
-app.post('/send__messages', (req, res) => {
-    console.log(req.body); //JSON data sent in request which could be the name, email or message
-    res.send('Data received'); //back to the client
-});
-
-app.listen(PORT, () => {  //Starts the server and listens for connections
-    console.log(`Server running on Port ${PORT}`);
+//Start server 
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {  //Function starts server on localhost:3000
+    console.log(`Server is running on port ${PORT}`);
 });
