@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --soft-cream: #F4EDE8;
+    --warm-terracotta: #E07A5F;
+    --burnt-sienna: #B5651D;
+    --olive: #708D81;
+    --deep-mustard: #D5A021;
+    --sage-green: #A8C686;
+    --dusty-rose: #D4A5A5;
+    --muted-aqua: #89C2D9;
+    --charcoal-black: #222222;
+    --orange-gradient: #AE9754;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Playfair", serif;
+    box-sizing: border-box;
+}
+
+
+ html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--soft-cream);
+}
+
+/*Header section*/
+.navbar {
+    background: linear-gradient(to right, var(--burnt-sienna), var(--orange-gradient), var(--sage-green));
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--soft-cream);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.nav__links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav__links a {
+    color: var(--soft-cream);
+    text-decoration: none;
+    font-weight: bold;
+    
+}
+
+.nav__links a:hover {
+    color: var(--charcoal-black);
+}
+
+.subscribe__btn {
+    background-color: var(--deep-mustard);
+    color: var(--soft-cream);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.subscribe__btn:hover {
+    background-color: var(--sage-green);
+    color: var(--charcoal-black);
+}
+
+/*Contact */
+.contact__section {
+    display: flex;
+    justify-content: center;
+    padding: 4rem 0;
+    
+}
+
+.contact__form {
+    flex: 1;
+    max-width: 1000px;
+    width: 90%;
+    gap: 2rem;
+    display: absolute;
+    padding: 2rem;
+}
+
+.contact__header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact__header h2 {
+    font-size: 5rem;
+    font-weight: bold;
+    color: var(--charcoal-black);
+}
+
+.contact__icon {
+    width: 50px;
+}
+
+.contact__form form {
+    margin-top: 1rem;
+}
+
+.form__content {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.form__content input,
+.form__content textarea {
+    width: 60%;
+    padding: 0.8rem;
+    border: 2px solid var(--muted-aqua);
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    
+}
+
+textarea {
+    height: 120px;
+    resize: none;
+}
+
+.send__button {
+    background-color: var(--sage-green);
+    color: var(--charcoal-black);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+    width: 45%;
+    
+}
+
+.send__button:hover {
+    background-color: var(--burnt-sienna);
+    color: var(--soft-cream);
+}
+
+.contact__image {
+   float: right;
+}
+
+.contact__image img {
+    width: 100%;
+    max-width: 300px;
+}
+
+/*Footer*/
+footer {
+    background-color: var(--burnt-sienna);
+    padding: 1rem;
+    margin-top: auto;
+}
+
+.social__links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 0.5rem;
+    background-color: transparent;
+}
+
+.social__links a {
+    color: var(--charcoal-black);
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+    background-color: transparent;
+}
+
+.social__links a:hover {
+    transform: translateY(-3px);
+    color: var(--dusty-rose);
+    background-color: transparent;
+}
+
+i {
+    background-color: transparent;
+}
+
+.footer__nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    background-color: transparent;
+}
+
+.footer__nav a {
+    color: var(--charcoal-black);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.footer__nav a:hover {
+    opacity: 0.8;
+    color: var(--dusty-rose);
+}
